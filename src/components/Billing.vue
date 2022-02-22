@@ -39,7 +39,6 @@ export default {
     },
     methods: {
         openPlanModal(val) {
-            alert()
             this.$emit('modal-open', val)
         }
     }

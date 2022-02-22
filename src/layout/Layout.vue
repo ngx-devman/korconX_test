@@ -12,7 +12,7 @@
           <tabs :tabList="tabList">
             <template v-slot:tabPanel-1>
               <div class="lg:flex lg:items-center rounded-xl border border-gray m-8">
-                <Billing v-for="(plan, index) in planList" :key="index" :planContext="plan" />
+                <Billing v-for="(plan, index) in planList" :key="index" :planContext="plan" @modal-open="openModal" />
               </div>
             </template>
             <template v-slot:tabPanel-2>
@@ -29,7 +29,7 @@
       <router-view />
     </div>
   </div>
-  <PlanModal @modal-open="openModal"/>
+  <PlanModal :is-open="isOpen" @close="isOpen= false" />
 </template>
 
 <script>
@@ -50,6 +50,7 @@ export default {
     components: { Sidebar, Header, Tabs, Billing, PlanModal },
     data() {
       return {
+        isOpen: false,
         tabList: ["Billing & Subscription", "Invitations", "Data Logs"],
         planList: [
           {
@@ -89,6 +90,12 @@ export default {
             ]
           }
         ]
+      }
+    },
+    methods: {
+      openModal () {
+        console.log("It's clicked")
+        this.isOpen = !this.isOpen
       }
     }
 }

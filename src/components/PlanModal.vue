@@ -14,9 +14,9 @@
       >
         <div class="max-w-2xl p-6 mx-4 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
-            <h3 class="text-2xl">Model Title</h3>
+            <h1 class="text-4xl">Add Plan</h1>
             <svg
-              @click="isOpen = false"
+              @click="$emit('close')"
               xmlns="http://www.w3.org/2000/svg"
               class="w-8 h-8 text-red-900 cursor-pointer"
               fill="none"
@@ -39,7 +39,7 @@
               eaque quisquam in quis provident necessitatibus.
             </p>
             <button
-              @click="isOpen = false"
+              @click="$emit('close')"
               class="px-6 py-2 text-blue-800 border border-blue-600 rounded"
             >
               Cancel
@@ -57,16 +57,14 @@
 
 export default {
   name: "PlanModal",
-  data () {
-    return {
-      isOpen: false
+  props: {
+    isOpen: {
+      type:Boolean,
+      default: false
     }
   },
   methods: {
-    openModal () {
-      console.log("It's clicked")
-      this.isOpen = !this.isOpen
-    }
+    
   }
 };
 </script>

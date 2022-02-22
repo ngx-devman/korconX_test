@@ -10,7 +10,7 @@
       <li
         v-for="(tab, index) in tabList"
         :key="index"
-        class="w-full p-7 text-lg font-medium  bg-red-50"
+        class="w-full p-6 text-lg font-medium  bg-gray-100"
         :class="{
           'text-blue-600 border-b-2 border-b-blue-600': index + 1 === activeTab,
           'text-slate-700': index + 1 !== activeTab,
