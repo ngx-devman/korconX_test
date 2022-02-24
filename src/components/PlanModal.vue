@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full mx-auto">
+  <div class="h-full mx-auto animated fadeIn">
     <div class="flex justify-center">
       <div
         v-show="isOpen"
@@ -12,41 +12,22 @@
           bg-gray-700 bg-opacity-50
         "
       >
-        <div class="max-w-2xl p-6 mx-4 bg-white rounded-md shadow-xl">
+        <div class="container-md p-6 mx-4 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
             <h1 class="text-4xl">Add Plan</h1>
-            <svg
-              @click="$emit('close')"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 text-red-900 cursor-pointer"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <div class="flex cursor-pointer" @click="$emit('close')">
+                <span class="text-md text-gray-900 items-center font-medium p-2">Close</span>
+                <img src="../assets/img/plan/icons/close.svg" alt="">
+            </div>   
           </div>
           <div class="mt-4">
-            <p class="mb-4 text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus qui nihil laborum quaerat blanditiis nemo explicabo
-              voluptatum ea architecto corporis quo vitae, velit temporibus
-              eaque quisquam in quis provident necessitatibus.
-            </p>
-            <button
+            <multi-step-form></multi-step-form>
+            <!-- <button
               @click="$emit('close')"
               class="px-6 py-2 text-blue-800 border border-blue-600 rounded"
             >
               Cancel
-            </button>
-            <button class="px-6 py-2 ml-2 text-blue-100 bg-blue-600 rounded">
-              Save
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -54,9 +35,12 @@
   </div>
 </template>
 <script>
-
+import MultiStepForm from "../components/MultiStepForm.vue";
 export default {
   name: "PlanModal",
+  components: {
+    MultiStepForm
+  },
   props: {
     isOpen: {
       type:Boolean,
