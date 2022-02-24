@@ -40,7 +40,7 @@ import Billing from "../components/Billing.vue";
 import PlanModal from "../components/PlanModal.vue";
 import freeForever from "../assets/img/plan/back_free.svg";
 import shareHolder from "../assets/img/plan/back_shareholder.svg";
-import backPrivate from "../assets/img/plan/back_Private.svg";
+import backPrivate from "../assets/img/plan/back_private.svg";
 import freeConImg from "../assets/img/plan/freeForever.svg";
 import shareConImg from "../assets/img/plan/shareholderMGMT.svg";
 import privateConImg from "../assets/img/plan/WhiteLabel.svg";
