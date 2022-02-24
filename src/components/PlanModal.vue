@@ -10,9 +10,10 @@
           items-center
           justify-center
           bg-gray-700 bg-opacity-50
+          overflow-y-auto
         "
       >
-        <div class="container-md p-6 mx-4 bg-white rounded-md shadow-xl">
+        <div class="container-md max-w-screen-md p-6 mx-4 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between">
             <h1 class="text-4xl">Add Plan</h1>
             <div class="flex cursor-pointer" @click="$emit('close')">

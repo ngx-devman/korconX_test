@@ -43,7 +43,7 @@
             <input
               name=""
               type="text"
-              class="w-full px-3 py-3 text-gray-800 border rounded-lg outline-none bg-gray-50 focus:ring ring-indigo-300"
+              class="w-full px-3 py-3 text-gray-800 border rounded-lg outline-none bg-gray-50 focus:ring ring-indigo-300 mb-4"
               v-model="field.value"
             />
 
